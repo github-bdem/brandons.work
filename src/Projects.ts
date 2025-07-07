@@ -14,48 +14,64 @@ interface Project {
 
 const projects = [
     {
-        id: "766dda39-6c26-4ed1-87a2-fc84a4d8fa1b",
-        name: "Food Roulette",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper nunc vitae blandit mattis. Curabitur non gravida nisi. Nam non mi augue. Donec pretium tortor id tellus blandit, ut congue metus laoreet. Nam laoreet aliquet elementum. Maecenas in ipsum tortor. Quisque id tristique dolor, non feugiat elit. ",
+        id: "72660e92-7fdc-4739-9dc0-beef37719f4a",
+        name: "Vite React Tailwind Project Template",
+        description: `Template repository branched from Food-Roulette project.  Contains all the project structure, linting, tooling, etc. that I prefer when building out a site.`,
         previewImageUrl: "",
         repoLink: {
             displayText: "Github",
-            href: "wwww.github.com",
+            href: "https://github.com/github-bdem/vite-react-tailwind-project-template",
+        },
+    },
+    {
+        id: "766dda39-6c26-4ed1-87a2-fc84a4d8fa1b",
+        name: "Food Roulette",
+        description: `Improved food finding web app written in TS, React, and Tailwind.  This project was an extension of the older 'Goto.pizza'`,
+        previewImageUrl: "",
+        repoLink: {
+            displayText: "Github",
+            href: "https://github.com/github-bdem/food-roulette",
         },
         liveLink: {
-            displayText: "Github",
-            href: "wwww.github.com",
+            displayText: "Food Roulette",
+            href: "https://www.food-roulette.app/",
         },
     },
     {
         id: "3c67f930-7e99-44e5-8643-7a33dce15266",
-        name: "Food Roulette",
+        name: "Goto.pizza",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper nunc vitae blandit mattis. Curabitur non gravida nisi. Nam non mi augue. Donec pretium tortor id tellus blandit, ut congue metus laoreet. Nam laoreet aliquet elementum. Maecenas in ipsum tortor. Quisque id tristique dolor, non feugiat elit. ",
+            "Fun Google maps based toy project built in react/JS.  I had bought the url 'goto.pizza' and figured I may as well do something with it, and thus this site was born.",
         previewImageUrl: "",
         repoLink: {
             displayText: "Github",
-            href: "wwww.github.com",
+            href: "https://github.com/github-bdem/goto.pizza",
         },
-        liveLink: {
+    },
+    {
+        id: "534589e2-7d86-4761-a4df-a7496baf1c18",
+        name: "OS Input Capture",
+        description:
+            "Node.js keyboard, mouse, and screen capture and logging utility for linux.",
+        previewImageUrl: "",
+        repoLink: {
             displayText: "Github",
-            href: "wwww.github.com",
+            href: "https://github.com/github-bdem/os-input-capture",
         },
     },
     {
         id: "621331de-1e70-4e4f-b9d4-314386dbe811",
-        name: "Food Roulette",
+        name: "PyPWA",
         description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus semper nunc vitae blandit mattis. Curabitur non gravida nisi. Nam non mi augue. Donec pretium tortor id tellus blandit, ut congue metus laoreet. Nam laoreet aliquet elementum. Maecenas in ipsum tortor. Quisque id tristique dolor, non feugiat elit. ",
+            "A python based software framework designed to perform Partial Wave and Amplitude Analysis with the goal of extracting resonance information from multi-particle final states.",
         previewImageUrl: "",
         repoLink: {
             displayText: "Github",
-            href: "wwww.github.com",
+            href: "https://github.com/JeffersonLab/PyPWA",
         },
         liveLink: {
-            displayText: "Github",
-            href: "wwww.github.com",
+            displayText: "JLAB Project Page",
+            href: "https://www.jlab.org/pypwa",
         },
     },
 ] as Project[];
