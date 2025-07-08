@@ -128,6 +128,34 @@ function App() {
                 </div>
             </div>
             <div className="crt-speaker-grille"></div>
+            
+            {/* Control Panel */}
+            <div className="crt-control-panel">
+                <div className="control-label">BRIGHTNESS</div>
+                <div className="dial">
+                    <div className="dial-marker"></div>
+                </div>
+                <div className="control-label">CONTRAST</div>
+                <div className="dial">
+                    <div className="dial-marker"></div>
+                </div>
+            </div>
+            
+            {/* Indicator Lights */}
+            <div className="crt-indicators">
+                <div className="indicator-group">
+                    <div className="indicator-light power active"></div>
+                    <span className="indicator-label">PWR</span>
+                </div>
+                <div className="indicator-group">
+                    <div className="indicator-light signal pulse"></div>
+                    <span className="indicator-label">SIG</span>
+                </div>
+                <div className="indicator-group">
+                    <div className="indicator-light standby"></div>
+                    <span className="indicator-label">STBY</span>
+                </div>
+            </div>
         </div>
     );
 }
