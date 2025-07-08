@@ -1,29 +1,29 @@
 @import "tailwindcss";
 @plugin "daisyui" {
     themes:
-        cyberpunk --default,
+        intra --default,
         light,
         dark;
 }
 @plugin "daisyui/theme" {
-    name: "cyberpunk";
+    name: "intra";
     default: false;
     prefersdark: true;
     color-scheme: "dark";
-    --color-base-100: #0a0a0a;
-    --color-base-200: #141414;
-    --color-base-300: #1e1e1e;
-    --color-base-content: #ffffff;
-    --color-primary: #00ffff;
+    --color-base-100: #1a1a1a;
+    --color-base-200: #242424;
+    --color-base-300: #2e2e2e;
+    --color-base-content: #e0e0e0;
+    --color-primary: #c0ff00;
     --color-primary-content: #000000;
-    --color-secondary: #ff0080;
-    --color-secondary-content: #ffffff;
-    --color-accent: #ffff00;
-    --color-accent-content: #000000;
-    --color-neutral: #1a1a1a;
-    --color-neutral-content: #ffffff;
-    --color-info: #00bfff;
-    --color-info-content: #000000;
+    --color-secondary: #ffeb3b;
+    --color-secondary-content: #000000;
+    --color-accent: #9c8b9e;
+    --color-accent-content: #ffffff;
+    --color-neutral: #3d3d3d;
+    --color-neutral-content: #e0e0e0;
+    --color-info: #7c7c7c;
+    --color-info-content: #ffffff;
     --color-success: #00ff88;
     --color-success-content: #000000;
     --color-warning: #ff9f00;
@@ -58,16 +58,16 @@
 }
 
 :root {
-    --neon-cyan: #00ffff;
-    --neon-pink: #ff0080;
-    --neon-yellow: #ffff00;
-    --neon-green: #00ff88;
-    --neon-blue: #00bfff;
-    --neon-red: #ff0040;
-    --neon-orange: #ff9f00;
-    --bg-dark: #0a0a0a;
-    --bg-darker: #050505;
-    --grid-color: rgba(0, 255, 255, 0.1);
+    --lime: #c0ff00;
+    --yellow: #ffeb3b;
+    --purple-light: #b19bb5;
+    --purple-dark: #9c8b9e;
+    --gray-light: #e0e0e0;
+    --gray-medium: #7c7c7c;
+    --gray-dark: #3d3d3d;
+    --bg-main: #b19bb5;
+    --bg-secondary: #e8e8e8;
+    --grid-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -76,40 +76,115 @@
 
 body {
     font-family: "Orbitron", monospace;
-    background-color: var(--bg-darker);
-    background-image: 
-        linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    color: #ffffff;
+    background: linear-gradient(135deg, #b19bb5 0%, #9c8b9e 50%, #e8e8e8 100%);
+    position: relative;
+    color: #1a1a1a;
     overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Rajdhani", sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.2em;
+    color: #1a1a1a;
+}
+
+.btn {
+    border: 2px solid var(--gray-dark);
+    background: var(--gray-light);
+    color: var(--gray-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: var(--lime);
+    border-color: var(--gray-dark);
+    color: #000000;
+}
+
+.btn-primary:hover {
+    background: var(--lime);
+    border-color: var(--gray-dark);
+}
+
+.btn-secondary {
+    background: var(--yellow);
+    border-color: var(--gray-dark);
+    color: #000000;
+}
+
+.btn-secondary:hover {
+    background: var(--yellow);
+    border-color: var(--gray-dark);
 }
 
 
-.neon-border {
-    border: 1px solid currentColor;
+.tech-border {
+    border: 2px solid var(--gray-dark);
+    background: rgba(255, 255, 255, 0.9);
+    position: relative;
 }
 
-.solid-text-primary {
-    color: var(--neon-cyan);
+.tech-border::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 1px solid var(--gray-medium);
+    pointer-events: none;
 }
 
-.solid-text-secondary {
-    color: var(--neon-pink);
+.geometric-accent {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: var(--lime);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    opacity: 0.8;
 }
 
-.cyber-card {
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid var(--neon-cyan);
+.isometric-text {
+    transform: skewY(-2deg);
+}
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--gray-dark);
     position: relative;
     overflow: hidden;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tech-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
 

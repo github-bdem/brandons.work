@@ -7,9 +7,9 @@ interface ProjectSlideProps {
 
 function ProjectSlide({ index, project }: ProjectSlideProps) {
     return (
-        <div id={`slide${index}`} className="cyber-card w-full">
+        <div id={`slide${index}`} className="tech-card w-full transition-all duration-200">
             <div className="flex flex-col h-full">
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden h-40">
                     {project.previewImageUrl ? (
                         <img
                             src={project.previewImageUrl}
@@ -17,20 +17,19 @@ function ProjectSlide({ index, project }: ProjectSlideProps) {
                             className="w-full h-full object-cover"
                         />
                     ) : (
-                        <div className="w-full h-full bg-primary/20 flex items-center justify-center">
-                            <span className="text-6xl text-primary/50 font-bold">{project.name.charAt(0)}</span>
+                        <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+                            <span className="text-5xl text-gray-300 font-bold">{project.name.charAt(0)}</span>
                         </div>
                     )}
-                    <div className="absolute inset-0 bg-base-100/50"></div>
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                    <h2 className="text-2xl mb-4 text-primary">{project.name}</h2>
-                    <p className="text-sm mb-6 flex-grow opacity-80">{project.description}</p>
+                                    </div>
+                <div className="p-4 flex flex-col flex-grow">
+                    <h2 className="text-xl mb-3 font-bold uppercase tracking-wider text-gray-900">{project.name}</h2>
+                    <p className="text-sm mb-4 flex-grow text-gray-600">{project.description}</p>
                     <div className="flex gap-3">
                         {project.liveLink ? (
                             <a 
                                 href={project.liveLink.href} 
-                                className="btn btn-sm btn-primary"
+                                className="btn btn-sm btn-primary shadow-sm"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -39,7 +38,7 @@ function ProjectSlide({ index, project }: ProjectSlideProps) {
                         ) : null}
                         <a 
                             href={project.repoLink.href} 
-                            className="btn btn-sm btn-secondary"
+                            className="btn btn-sm shadow-sm"
                             target="_blank"
                             rel="noopener noreferrer"
                         >

@@ -14,13 +14,16 @@ function App() {
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     return (
-        <div className="h-screen snap-y snap-mandatory overflow-y-auto">
+        <div className="h-screen snap-y snap-mandatory overflow-y-auto relative z-10">
             {/* Intro Section - Fullscreen */}
             <div className="h-screen shrink-0 snap-start flex items-center justify-center p-8">
                 <div className="max-w-4xl w-full">
-                    <h1 className="text-6xl md:text-8xl mb-8 text-primary text-center">{`Brandon's Work`}</h1>
-                    <div className="neon-border p-6 mb-12 bg-base-100/50 backdrop-blur">
-                        <p className="text-lg leading-relaxed text-center">
+                    <h1 className="text-4xl md:text-6xl mb-6 text-center font-black tracking-wider">
+                        <span className="text-gray-900">BRANDON'S</span>
+                        <span className="text-primary ml-4">WORK</span>
+                    </h1>
+                    <div className="tech-border p-8 mb-10">
+                        <p className="text-base leading-relaxed text-center text-gray-700">
                             {`My name is Brandon and I've been doing development
                             since 2012. I specialize in front end engineering
                             and have worked in both startups and corporate
@@ -30,10 +33,10 @@ function App() {
                     </div>
                     
                     <div className="flex gap-6 justify-center">
-                        <a className="btn btn-primary" href="#">
+                        <a className="btn btn-primary shadow-md" href="#">
                             <span className="uppercase tracking-wider">LinkedIn</span>
                         </a>
-                        <a className="btn btn-secondary" href="#">
+                        <a className="btn btn-secondary shadow-md" href="#">
                             <span className="uppercase tracking-wider">Github</span>
                         </a>
                     </div>
@@ -43,7 +46,9 @@ function App() {
             {/* Projects Section - Fullscreen */}
             <div className="h-screen shrink-0 snap-start flex flex-col p-8">
                 <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
-                    <h2 className="text-4xl md:text-5xl mb-8 text-center text-primary">Projects</h2>
+                    <h2 className="text-3xl md:text-4xl mb-6 text-center font-black tracking-wider">
+                        <span className="text-gray-900">PRO</span><span className="text-primary">JECTS</span>
+                    </h2>
                     
                     <div className="flex-grow overflow-y-auto">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
