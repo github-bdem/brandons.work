@@ -14,16 +14,20 @@ function App() {
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     return (
-        <div className="h-screen snap-y snap-mandatory overflow-y-auto relative z-10">
+        <div className="h-screen snap-y snap-mandatory overflow-y-auto relative z-10 terminal-container">
             {/* Intro Section - Fullscreen */}
             <div className="h-screen shrink-0 snap-start flex items-center justify-center p-8">
-                <div className="max-w-4xl w-full">
-                    <h1 className="text-4xl md:text-6xl mb-6 text-center font-black tracking-wider">
-                        <span className="text-gray-900">BRANDON'S</span>
-                        <span className="text-primary ml-4">WORK</span>
+                <div className="max-w-4xl w-full relative">
+                    <div className="terminal-header">
+                        <span className="terminal-indicator"></span>
+                        <span className="terminal-text">SYSTEM.INIT</span>
+                    </div>
+                    <h1 className="text-4xl md:text-6xl mb-6 text-center font-black tracking-wider glitch" data-text="BRANDON'S WORK">
+                        <span className="">BRANDON'S</span>
+                        <span className="text-secondary ml-4">WORK</span>
                     </h1>
                     <div className="tech-border p-8 mb-10">
-                        <p className="text-base leading-relaxed text-center text-gray-700">
+                        <p className="text-base leading-relaxed text-center terminal-text">
                             {`My name is Brandon and I've been doing development
                             since 2012. I specialize in front end engineering
                             and have worked in both startups and corporate
@@ -33,11 +37,19 @@ function App() {
                     </div>
                     
                     <div className="flex gap-6 justify-center">
-                        <a className="btn btn-primary shadow-md" href="#">
-                            <span className="uppercase tracking-wider">LinkedIn</span>
+                        <a className="btn btn-primary tech-button" href="#">
+                            <span className="button-corner top-left"></span>
+                            <span className="button-corner top-right"></span>
+                            <span className="button-corner bottom-left"></span>
+                            <span className="button-corner bottom-right"></span>
+                            <span className="uppercase tracking-wider">[ LINKEDIN ]</span>
                         </a>
-                        <a className="btn btn-secondary shadow-md" href="#">
-                            <span className="uppercase tracking-wider">Github</span>
+                        <a className="btn btn-secondary tech-button" href="#">
+                            <span className="button-corner top-left"></span>
+                            <span className="button-corner top-right"></span>
+                            <span className="button-corner bottom-left"></span>
+                            <span className="button-corner bottom-right"></span>
+                            <span className="uppercase tracking-wider">[ GITHUB ]</span>
                         </a>
                     </div>
                 </div>
@@ -46,8 +58,12 @@ function App() {
             {/* Projects Section - Fullscreen */}
             <div className="h-screen shrink-0 snap-start flex flex-col p-8">
                 <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
-                    <h2 className="text-3xl md:text-4xl mb-6 text-center font-black tracking-wider">
-                        <span className="text-gray-900">PRO</span><span className="text-primary">JECTS</span>
+                    <div className="terminal-header mb-6">
+                        <span className="terminal-indicator pulse"></span>
+                        <span className="terminal-text">PROJECTS.DISPLAY</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl mb-6 text-center font-black tracking-wider glitch" data-text="PROJECTS">
+                        <span className="">PRO</span><span className="text-secondary">JECTS</span>
                     </h2>
                     
                     <div className="flex-grow overflow-y-auto">
@@ -70,16 +86,16 @@ function App() {
                             <button
                                 onClick={() => paginate(currentPage - 1)}
                                 disabled={currentPage === 1}
-                                className="btn btn-sm"
+                                className="btn btn-sm tech-button-small"
                             >
-                                Previous
+                                &lt;&lt;
                             </button>
                             
                             {Array.from({ length: totalPages }, (_, i) => (
                                 <button
                                     key={i + 1}
                                     onClick={() => paginate(i + 1)}
-                                    className={`btn btn-sm ${
+                                    className={`btn btn-sm tech-button-small ${
                                         currentPage === i + 1 ? 'btn-primary' : ''
                                     }`}
                                 >
@@ -90,9 +106,9 @@ function App() {
                             <button
                                 onClick={() => paginate(currentPage + 1)}
                                 disabled={currentPage === totalPages}
-                                className="btn btn-sm"
+                                className="btn btn-sm tech-button-small"
                             >
-                                Next
+                                &gt;&gt;
                             </button>
                         </div>
                     )}
