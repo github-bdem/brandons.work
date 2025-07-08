@@ -7,15 +7,14 @@ interface ProjectSlideProps {
 
 function ProjectSlide({ index, project }: ProjectSlideProps) {
     return (
-        <div
-            id={`slide${index}`}
-            className="card bg-base-100 size-full md:shadow-sm"
-        >
+        <div id={`slide${index}`} className="card bg-base-300">
             <div className="flex flex-col">
-                <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                />
+                {project.previewImageUrl ?? (
+                    <img
+                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                        alt="Shoes"
+                    />
+                )}
                 <div className="flex flex-col">
                     <h2 className="text-2xl">{project.name}</h2>
                     {project.liveLink ? (
