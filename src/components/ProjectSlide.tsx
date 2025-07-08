@@ -10,7 +10,7 @@ function ProjectSlide({ index, project }: ProjectSlideProps) {
         <div id={`slide${index}`} className="tech-card w-full transition-all duration-200">
             <div className="project-id">ID: {String(index + 1).padStart(3, '0')}</div>
             <div className="flex flex-col h-full">
-                <div className="relative overflow-hidden h-40">
+                <div className="relative overflow-hidden h-32">
                     {project.previewImageUrl ? (
                         <img
                             src={project.previewImageUrl}
@@ -20,16 +20,16 @@ function ProjectSlide({ index, project }: ProjectSlideProps) {
                     ) : (
                         <div className="w-full h-full bg-black flex items-center justify-center relative">
                             <div className="ascii-placeholder">
-                                <span className="text-5xl text-amber font-mono opacity-20">[{project.name.charAt(0)}]</span>
+                                <span className="text-4xl text-amber font-mono opacity-20">[{project.name.charAt(0)}]</span>
                             </div>
                             <div className="scan-overlay"></div>
                         </div>
                     )}
                                     </div>
-                <div className="p-4 flex flex-col flex-grow">
-                    <h2 className="text-xl mb-3 font-bold uppercase tracking-wider text-amber terminal-text">&gt; {project.name}</h2>
-                    <p className="text-sm mb-4 flex-grow opacity-80">{project.description}</p>
-                    <div className="flex gap-3">
+                <div className="p-3 flex flex-col flex-grow">
+                    <h2 className="text-lg mb-2 font-bold uppercase tracking-wider text-amber terminal-text">&gt; {project.name}</h2>
+                    <p className="text-xs mb-3 flex-grow opacity-80 line-clamp-3">{project.description}</p>
+                    <div className="flex gap-2">
                         {project.liveLink ? (
                             <a 
                                 href={project.liveLink.href} 

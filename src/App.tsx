@@ -61,18 +61,20 @@ function App() {
             </div>
 
             {/* Projects Section - Fullscreen */}
-            <div className="h-screen shrink-0 snap-start flex flex-col p-8">
-                <div className="max-w-7xl mx-auto w-full h-full flex flex-col">
-                    <div className="terminal-header mb-6">
-                        <span className="terminal-indicator pulse"></span>
-                        <span className="terminal-text">PROJECTS.DISPLAY</span>
+            <div className="h-screen shrink-0 snap-start flex flex-col p-4">
+                <div className="max-w-6xl mx-auto w-full h-full flex flex-col pt-8">
+                    <div className="flex justify-center mb-3">
+                        <div className="terminal-header">
+                            <span className="terminal-indicator pulse"></span>
+                            <span className="terminal-text">PROJECTS.DISPLAY</span>
+                        </div>
                     </div>
-                    <h2 className="text-3xl md:text-4xl mb-6 text-center font-black tracking-wider glitch" data-text="PROJECTS">
+                    <h2 className="text-2xl md:text-3xl mb-4 text-center font-black tracking-wider glitch" data-text="PROJECTS">
                         <span className="">PRO</span><span className="text-secondary">JECTS</span>
                     </h2>
                     
-                    <div className="flex-grow overflow-y-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div className="flex-grow overflow-y-auto px-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
                             {currentProjects.map((project, index) => {
                                 const actualIndex = indexOfFirstProject + index;
                                 return (
