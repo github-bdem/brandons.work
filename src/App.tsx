@@ -14,8 +14,13 @@ function App() {
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
     return (
-        <div className="h-screen snap-y snap-mandatory overflow-y-auto relative z-10 terminal-container">
-            {/* Intro Section - Fullscreen */}
+        <div className="crt-container">
+            <div className="crt-bezel">
+                <div className="crt-bezel-inner">
+                    <div className="crt-screen">
+                        <div className="crt-content">
+                            <div className="h-screen snap-y snap-mandatory overflow-y-auto relative z-10 terminal-container">
+                                {/* Intro Section - Fullscreen */}
             <div className="h-screen shrink-0 snap-start flex items-center justify-center p-8">
                 <div className="max-w-4xl w-full relative">
                     <div className="terminal-header">
@@ -114,6 +119,13 @@ function App() {
                     )}
                 </div>
             </div>
+                            </div>
+                        </div>
+                        <div className="crt-overlay"></div>
+                    </div>
+                </div>
+            </div>
+            <div className="crt-speaker-grille"></div>
         </div>
     );
 }
