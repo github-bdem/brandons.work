@@ -32,6 +32,20 @@ function App() {
                     })}
                 </div>
             </div>
+
+            <div className="h-full shrink-0 snap-start">
+                <div className="flex h-full w-full flex-wrap gap-2 p-2">
+                    {projects.map((project, index: number) => {
+                        return (
+                            <ProjectSlide
+                                key={`item-${index}`}
+                                index={index}
+                                project={project}
+                            />
+                        );
+                    })}
+                </div>
+            </div>
         </div>
     );
 }
