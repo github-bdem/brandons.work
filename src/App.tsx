@@ -63,7 +63,7 @@ function App() {
             {/* Projects Section - Fullscreen */}
             <div className="h-screen shrink-0 snap-start flex flex-col p-4">
                 <div className="max-w-6xl mx-auto w-full h-full flex flex-col pt-8">
-                    <div className="flex justify-center mb-3">
+                    <div className="flex justify-start mb-3 px-4">
                         <div className="terminal-header">
                             <span className="terminal-indicator pulse"></span>
                             <span className="terminal-text">PROJECTS.DISPLAY</span>
