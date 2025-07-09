@@ -26,7 +26,7 @@ function App() {
                                 {/* Intro Section - Fullscreen */}
                                 <div className="flex h-full shrink-0 snap-start items-center justify-center p-8">
                                     <div className="relative w-full max-w-4xl">
-                                        <div className="terminal-header">
+                                        <div className="terminal-header mb-8">
                                             <span className="terminal-indicator"></span>
                                             <span className="terminal-text">
                                                 SYSTEM.INIT
