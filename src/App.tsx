@@ -1,20 +1,10 @@
-import { useState } from "react";
 import ProjectSlide from "./components/ProjectSlide";
+import TerminalPageIndicator from "./components/TerminalPageIndicator";
+import CFButton from "./components/CFButton";
 import projects from "./Projects";
 
 function App() {
-    const [currentPage, setCurrentPage] = useState(1);
-    const projectsPerPage = 6;
-    const totalPages = Math.ceil(projects.length / projectsPerPage);
-
-    const indexOfLastProject = currentPage * projectsPerPage;
-    const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-    const currentProjects = projects.slice(
-        indexOfFirstProject,
-        indexOfLastProject,
-    );
-
-    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+    const currentProjects = projects;
 
     return (
         <div className="crt-container">
@@ -23,15 +13,9 @@ function App() {
                     <div className="crt-screen">
                         <div className="crt-content">
                             <div className="terminal-container relative z-10 h-full snap-y snap-mandatory overflow-y-auto">
-                                {/* Intro Section - Fullscreen */}
-                                <div className="flex h-full shrink-0 snap-start items-center justify-center p-8">
+                                <div className="flex h-full shrink-0 snap-start flex-col items-center justify-center p-8">
+                                    <TerminalPageIndicator pageTitle="SYSTEM.INIT" />
                                     <div className="relative w-full max-w-4xl">
-                                        <div className="terminal-header mb-8">
-                                            <span className="terminal-indicator"></span>
-                                            <span className="terminal-text">
-                                                SYSTEM.INIT
-                                            </span>
-                                        </div>
                                         <h1
                                             className="glitch mb-6 text-center text-4xl font-black tracking-wider md:text-6xl"
                                             data-text="BRANDON'S WORK"
@@ -53,30 +37,9 @@ function App() {
                                         </div>
 
                                         <div className="flex justify-center gap-6">
-                                            <a
-                                                className="btn btn-primary tech-button"
-                                                href="#"
-                                            >
-                                                <span className="button-corner top-left"></span>
-                                                <span className="button-corner top-right"></span>
-                                                <span className="button-corner bottom-left"></span>
-                                                <span className="button-corner bottom-right"></span>
-                                                <span className="tracking-wider uppercase">
-                                                    [ LINKEDIN ]
-                                                </span>
-                                            </a>
-                                            <a
-                                                className="btn btn-secondary tech-button"
-                                                href="#"
-                                            >
-                                                <span className="button-corner top-left"></span>
-                                                <span className="button-corner top-right"></span>
-                                                <span className="button-corner bottom-left"></span>
-                                                <span className="button-corner bottom-right"></span>
-                                                <span className="tracking-wider uppercase">
-                                                    [ GITHUB ]
-                                                </span>
-                                            </a>
+                                            <CFButton url="" label="LINKEDIN" />
+                                            <CFButton url="" label="GITHUB" />
+                                            <CFButton url="" label="MEDIUM" />
                                         </div>
                                     </div>
                                 </div>
@@ -85,12 +48,7 @@ function App() {
                                 <div className="flex h-full shrink-0 snap-start flex-col p-4">
                                     <div className="mx-auto flex h-full w-full max-w-6xl flex-col pt-8">
                                         <div className="mb-3 flex justify-start px-4">
-                                            <div className="terminal-header">
-                                                <span className="terminal-indicator pulse"></span>
-                                                <span className="terminal-text">
-                                                    PROJECTS.DISPLAY
-                                                </span>
-                                            </div>
+                                            <TerminalPageIndicator pageTitle="PROJECTS.DISPLAY" />
                                         </div>
                                         <h2
                                             className="glitch mb-4 text-center text-2xl font-black tracking-wider md:text-3xl"
@@ -106,15 +64,10 @@ function App() {
                                             <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                                                 {currentProjects.map(
                                                     (project, index) => {
-                                                        const actualIndex =
-                                                            indexOfFirstProject +
-                                                            index;
                                                         return (
                                                             <ProjectSlide
-                                                                key={`project-${actualIndex}`}
-                                                                index={
-                                                                    actualIndex
-                                                                }
+                                                                key={`project-${index}`}
+                                                                index={index}
                                                                 project={
                                                                     project
                                                                 }
@@ -124,92 +77,12 @@ function App() {
                                                 )}
                                             </div>
                                         </div>
-
-                                        {totalPages > 1 && (
-                                            <div className="mt-4 flex justify-center gap-2">
-                                                <button
-                                                    onClick={() =>
-                                                        paginate(
-                                                            currentPage - 1,
-                                                        )
-                                                    }
-                                                    disabled={currentPage === 1}
-                                                    className="btn btn-sm tech-button-small"
-                                                >
-                                                    &lt;&lt;
-                                                </button>
-
-                                                {Array.from(
-                                                    { length: totalPages },
-                                                    (_, i) => (
-                                                        <button
-                                                            key={i + 1}
-                                                            onClick={() =>
-                                                                paginate(i + 1)
-                                                            }
-                                                            className={`btn btn-sm tech-button-small ${
-                                                                currentPage ===
-                                                                i + 1
-                                                                    ? "btn-primary"
-                                                                    : ""
-                                                            }`}
-                                                        >
-                                                            {i + 1}
-                                                        </button>
-                                                    ),
-                                                )}
-
-                                                <button
-                                                    onClick={() =>
-                                                        paginate(
-                                                            currentPage + 1,
-                                                        )
-                                                    }
-                                                    disabled={
-                                                        currentPage ===
-                                                        totalPages
-                                                    }
-                                                    className="btn btn-sm tech-button-small"
-                                                >
-                                                    &gt;&gt;
-                                                </button>
-                                            </div>
-                                        )}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="crt-overlay"></div>
                     </div>
-                </div>
-            </div>
-            <div className="crt-speaker-grille"></div>
-
-            {/* Control Panel */}
-            <div className="crt-control-panel">
-                <div className="control-label">BRIGHTNESS</div>
-                <div className="dial">
-                    <div className="dial-marker"></div>
-                </div>
-                <div className="control-label">CONTRAST</div>
-                <div className="dial">
-                    <div className="dial-marker"></div>
-                </div>
-            </div>
-
-            {/* Indicator Lights */}
-            <div className="crt-indicators">
-                <div className="indicator-group">
-                    <div className="indicator-light power active"></div>
-                    <span className="indicator-label">PWR</span>
-                </div>
-                <div className="indicator-group">
-                    <div className="indicator-light signal pulse"></div>
-                    <span className="indicator-label">SIG</span>
-                </div>
-                <div className="indicator-group">
-                    <div className="indicator-light standby"></div>
-                    <span className="indicator-label">STBY</span>
                 </div>
             </div>
         </div>
