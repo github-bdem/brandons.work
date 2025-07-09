@@ -89,22 +89,39 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
         linear-gradient(var(--grid-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-color) 1px, transparent 1px),
-        linear-gradient(180deg, var(--scan-line) 0%, transparent 50%, var(--scan-line) 100%);
-    background-size: 20px 20px, 20px 20px, 100% 4px;
+        linear-gradient(
+            180deg,
+            var(--scan-line) 0%,
+            transparent 50%,
+            var(--scan-line) 100%
+        );
+    background-size:
+        20px 20px,
+        20px 20px,
+        100% 4px;
     animation: scan 8s linear infinite;
     pointer-events: none;
     z-index: 1;
 }
 
 @keyframes scan {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(4px); }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(4px);
+    }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Courier New", "Courier", monospace;
     font-weight: 700;
     text-transform: uppercase;
@@ -169,16 +186,19 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--green);
 }
 
-
 .tech-border {
     border: 2px solid var(--amber);
     background: rgba(10, 10, 10, 0.8);
     position: relative;
     clip-path: polygon(
-        0 10px, 10px 0, 
-        calc(100% - 10px) 0, 100% 10px,
-        100% calc(100% - 10px), calc(100% - 10px) 100%,
-        10px 100%, 0 calc(100% - 10px)
+        0 10px,
+        10px 0,
+        calc(100% - 10px) 0,
+        100% 10px,
+        100% calc(100% - 10px),
+        calc(100% - 10px) 100%,
+        10px 100%,
+        0 calc(100% - 10px)
     );
 }
 
@@ -224,9 +244,12 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     overflow: hidden;
     clip-path: polygon(
-        0 0, calc(100% - 15px) 0, 
-        100% 15px, 100% 100%,
-        15px 100%, 0 calc(100% - 15px)
+        0 0,
+        calc(100% - 15px) 0,
+        100% 15px,
+        100% 100%,
+        15px 100%,
+        0 calc(100% - 15px)
     );
 }
 
@@ -292,8 +315,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
 }
 
 .terminal-text {
@@ -333,23 +361,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes glitch-trigger {
-    0%, 94%, 100% {
+    0%,
+    94%,
+    100% {
         text-shadow: none;
     }
     95% {
-        text-shadow: 
+        text-shadow:
             0.05em 0 0 rgba(255, 0, 0, 0.75),
             -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
             0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
     }
     96% {
-        text-shadow: 
+        text-shadow:
             -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
             0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
             -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
     }
     97% {
-        text-shadow: 
+        text-shadow:
             0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
             0.025em 0.05em 0 rgba(0, 255, 0, 0.75),
             0 -0.05em 0 rgba(0, 0, 255, 0.75);
@@ -357,7 +387,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes glitch-1 {
-    0%, 94%, 100% {
+    0%,
+    94%,
+    100% {
         opacity: 0;
     }
     95% {
@@ -378,7 +410,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes glitch-2 {
-    0%, 94%, 100% {
+    0%,
+    94%,
+    100% {
         opacity: 0;
     }
     95% {
@@ -477,8 +511,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes scan-vertical {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
 }
 
 .text-amber {
@@ -512,7 +550,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #d4c5a9;
     border-radius: 50px;
     padding: 35px;
-    box-shadow: 
+    box-shadow:
         inset 0 0 80px rgba(0, 0, 0, 0.3),
         inset 0 0 40px rgba(0, 0, 0, 0.2),
         0 0 100px rgba(0, 0, 0, 0.8);
@@ -553,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #000;
     border-radius: 30px;
     overflow: hidden;
-    box-shadow: 
+    box-shadow:
         inset 0 0 60px rgba(0, 0, 0, 0.9),
         inset 0 0 120px rgba(0, 0, 0, 0.7);
 }
@@ -564,7 +602,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     overflow: hidden;
     border-radius: 30px;
-    background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
 }
 
 .crt-content {
@@ -585,14 +627,13 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-        repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0) 0,
-            rgba(0, 0, 0, 0) 1px,
-            rgba(0, 0, 0, 0.02) 1px,
-            rgba(0, 0, 0, 0.02) 2px
-        );
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0) 1px,
+        rgba(0, 0, 0, 0.02) 1px,
+        rgba(0, 0, 0, 0.02) 2px
+    );
     pointer-events: none;
     z-index: 1;
 }
@@ -617,8 +658,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes slow-scan {
-    0% { transform: translateY(-100px); }
-    100% { transform: translateY(calc(100% + 100px)); }
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(calc(100% + 100px));
+    }
 }
 
 /* Barrel distortion effect */
@@ -657,7 +702,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
+    background:
         repeating-linear-gradient(
             0deg,
             transparent,
@@ -693,9 +738,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes crt-flicker {
-    0% { opacity: 0.99; }
-    50% { opacity: 1; }
-    100% { opacity: 0.995; }
+    0% {
+        opacity: 0.99;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.995;
+    }
 }
 
 /* Speaker grille */
@@ -753,7 +804,7 @@ body::before {
     background: #998866;
     border-radius: 50%;
     position: relative;
-    box-shadow: 
+    box-shadow:
         inset 0 2px 4px rgba(0, 0, 0, 0.3),
         0 1px 2px rgba(255, 255, 255, 0.1);
     cursor: pointer;
@@ -768,7 +819,7 @@ body::before {
     bottom: 2px;
     background: #bbaa88;
     border-radius: 50%;
-    box-shadow: 
+    box-shadow:
         0 2px 4px rgba(0, 0, 0, 0.2) inset,
         0 -1px 2px rgba(255, 255, 255, 0.1) inset;
 }
@@ -805,7 +856,7 @@ body::before {
     height: 12px;
     border-radius: 50%;
     background: #443322;
-    box-shadow: 
+    box-shadow:
         inset 0 1px 3px rgba(0, 0, 0, 0.5),
         0 0 3px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -824,7 +875,7 @@ body::before {
 
 .indicator-light.power.active {
     background: #00ff88;
-    box-shadow: 
+    box-shadow:
         inset 0 1px 3px rgba(0, 0, 0, 0.3),
         0 0 10px rgba(0, 255, 136, 0.6);
 }
@@ -840,13 +891,14 @@ body::before {
 }
 
 @keyframes indicator-pulse {
-    0%, 100% { 
-        box-shadow: 
+    0%,
+    100% {
+        box-shadow:
             inset 0 1px 3px rgba(0, 0, 0, 0.3),
             0 0 10px rgba(255, 159, 0, 0.6);
     }
-    50% { 
-        box-shadow: 
+    50% {
+        box-shadow:
             inset 0 1px 3px rgba(0, 0, 0, 0.3),
             0 0 20px rgba(255, 159, 0, 0.8);
     }
@@ -866,6 +918,3 @@ body::before {
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
-
-
-

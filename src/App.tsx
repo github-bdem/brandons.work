@@ -36,18 +36,19 @@ function App() {
                                             className="glitch mb-6 text-center text-4xl font-black tracking-wider md:text-6xl"
                                             data-text="BRANDON'S WORK"
                                         >
-                                            <span className="">BRANDON'S</span>
+                                            <span className="">{`BRANDON'S`}</span>
                                             <span className="text-secondary ml-4">
                                                 WORK
                                             </span>
                                         </h1>
                                         <div className="tech-border mb-10 p-8">
                                             <p className="terminal-text text-center text-base leading-relaxed">
-                                                {`My name is Brandon and I've been doing development
-                            since 2012. I specialize in front end engineering
-                            and have worked in both startups and corporate
-                            environments, led teams and efforts, and have built
-                            projects using a wide variety of tools and frameworks.`}
+                                                {`Hi, I'm Brandon. With over a decade of experience 
+                                                crafting digital experiences, I bring deep expertise 
+                                                in front-end engineering to every project. From nimble 
+                                                startups to enterprise environments, I've led teams, 
+                                                architected solutions, and delivered products that make 
+                                                a difference.`}
                                             </p>
                                         </div>
 
