@@ -57,6 +57,24 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: "ShareTechMono";
+    src: local("Major Mono Display"), url("./assets/fonts/MajorMonoDisplay-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "ShareTechMono";
+    src: local("ShareTechMono"), url("./assets/fonts/Michroma-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "ShareTechMono";
+    src: local("Share Tech Mono"), url("./assets/fonts/ShareTechMono-Regular.ttf");
+    font-weight: 400;
+}
+
 :root {
     --amber: #ff9f00;
     --green: #00ff88;
@@ -75,7 +93,7 @@
 }
 
 body {
-    font-family: "Courier New", "Courier", monospace;
+    font-family: "ShareTechMono", "Courier New", "Courier", monospace;
     background: #0a0a0a;
     position: relative;
     color: #ff9f00;
@@ -122,7 +140,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Courier New", "Courier", monospace;
+    font-family: "ShareTechMono", "Courier New", "Courier", monospace;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.3em;
@@ -137,7 +155,7 @@ h6 {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-weight: 700;
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
     transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
@@ -210,7 +228,7 @@ h6 {
     font-size: 10px;
     letter-spacing: 0.3em;
     color: var(--green);
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
 }
 
 .tech-border::after {
@@ -288,7 +306,7 @@ h6 {
 }
 
 .terminal-container {
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
 }
 
 .terminal-header {
@@ -326,7 +344,7 @@ h6 {
 
 .terminal-text {
     color: var(--amber);
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
     letter-spacing: 0.1em;
 }
 
@@ -484,14 +502,14 @@ h6 {
     right: 8px;
     font-size: 9px;
     color: var(--green);
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
     letter-spacing: 0.2em;
     opacity: 0.6;
     z-index: 10;
 }
 
 .ascii-placeholder {
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
 }
 
 .scan-overlay {
@@ -802,7 +820,7 @@ body::before {
 }
 
 .control-label {
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
     font-size: 9px;
     letter-spacing: 0.2em;
     color: #776655;
@@ -916,7 +934,7 @@ body::before {
 }
 
 .indicator-label {
-    font-family: "Courier New", monospace;
+    font-family: "ShareTechMono", "Courier New", monospace;
     font-size: 8px;
     letter-spacing: 0.1em;
     color: #776655;
