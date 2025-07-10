@@ -32,7 +32,7 @@ function App() {
                                             </span>
                                         </h1>
                                         <h1
-                                            className="glitch mb-6 flex flex-row text-center text-4xl font-black tracking-wider md:hidden md:text-6xl"
+                                            className="glitch mb-6 flex flex-row justify-center text-center text-4xl font-black tracking-wider md:hidden md:text-6xl"
                                             data-text="B.WORK"
                                         >
                                             <span className="">{`B`}</span>
