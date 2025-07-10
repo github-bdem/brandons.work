@@ -23,12 +23,21 @@ function App() {
                                     </div>
                                     <div className="relative w-full max-w-4xl">
                                         <h1
-                                            className="glitch mb-6 flex flex-col text-center text-4xl font-black tracking-wider md:flex-row md:justify-center md:text-6xl"
+                                            className="glitch mb-6 hidden flex-col text-center text-4xl font-black tracking-wider md:block md:text-6xl"
                                             data-text="BRANDON'S WORK"
                                         >
                                             <span className="">{`BRANDON'S`}</span>
                                             <span className="text-secondary ml-4">
                                                 WORK
+                                            </span>
+                                        </h1>
+                                        <h1
+                                            className="glitch mb-6 flex flex-row text-center text-4xl font-black tracking-wider md:hidden md:text-6xl"
+                                            data-text="B.WORK"
+                                        >
+                                            <span className="">{`B`}</span>
+                                            <span className="text-secondary">
+                                                .WORK
                                             </span>
                                         </h1>
                                         <div className="tech-border mb-10 hidden p-8 md:block">
