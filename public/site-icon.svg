@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+    <!-- Maroon background -->
+    <rect width="128" height="128" fill="#800020" rx="16" ry="16"/>
+
+    <!-- Cassette body outline -->
+    <rect x="16" y="32" width="96" height="64" fill="#F5DEB3" rx="4" ry="4"/>
+    <rect x="20" y="36" width="88" height="56" fill="#800020" rx="2" ry="2"/>
+
+    <!-- Top mechanical details -->
+    <rect x="24" y="40" width="80" height="8" fill="#F5DEB3" opacity="0.3"/>
+
+    <!-- Tape reels -->
+    <g id="reel">
+      <!-- Left reel with B -->
+      <circle cx="40" cy="64" r="16" fill="#F5DEB3"/>
+      <circle cx="40" cy="64" r="14" fill="#800020"/>
+      <circle cx="40" cy="64" r="12" fill="#F5DEB3" opacity="0.2"/>
+      <text x="40" y="69" font-family="Arial, sans-serif" font-size="16"
+  font-weight="bold" text-anchor="middle" fill="#F5DEB3">B</text>
+
+      <!-- Right reel with W -->
+      <circle cx="88" cy="64" r="16" fill="#F5DEB3"/>
+      <circle cx="88" cy="64" r="14" fill="#800020"/>
+      <circle cx="88" cy="64" r="12" fill="#F5DEB3" opacity="0.2"/>
+      <text x="88" y="69" font-family="Arial, sans-serif" font-size="16"
+  font-weight="bold" text-anchor="middle" fill="#F5DEB3">W</text>
+    </g>
+
+    <!-- Center window showing tape -->
+    <rect x="52" y="56" width="24" height="16" fill="#1a0008" rx="2" ry="2"/>
+    <rect x="54" y="58" width="20" height="12" fill="#F5DEB3" opacity="0.1"/>
+
+    <!-- Bottom label area -->
+    <rect x="24" y="80" width="80" height="8" fill="#F5DEB3" opacity="0.3"/>
+
+    <!-- Retro grid lines for cassette futurism feel -->
+    <g opacity="0.15">
+      <line x1="16" y1="48" x2="112" y2="48" stroke="#F5DEB3" stroke-width="1"/>
+      <line x1="16" y1="64" x2="112" y2="64" stroke="#F5DEB3" stroke-width="1"/>
+      <line x1="16" y1="80" x2="112" y2="80" stroke="#F5DEB3" stroke-width="1"/>
+      <line x1="32" y1="32" x2="32" y2="96" stroke="#F5DEB3" stroke-width="1"/>
+      <line x1="64" y1="32" x2="64" y2="96" stroke="#F5DEB3" stroke-width="1"/>
+      <line x1="96" y1="32" x2="96" y2="96" stroke="#F5DEB3" stroke-width="1"/>
+    </g>
+
+    <!-- Corner screws for mechanical detail -->
+    <circle cx="24" cy="40" r="2" fill="#F5DEB3" opacity="0.5"/>
+    <circle cx="104" cy="40" r="2" fill="#F5DEB3" opacity="0.5"/>
+    <circle cx="24" cy="88" r="2" fill="#F5DEB3" opacity="0.5"/>
+    <circle cx="104" cy="88" r="2" fill="#F5DEB3" opacity="0.5"/>
+</svg>

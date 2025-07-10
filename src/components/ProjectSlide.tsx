@@ -41,7 +41,7 @@ function ProjectSlide({ index, project }: ProjectSlideProps) {
                     <p className="mb-3 line-clamp-3 flex-grow text-xs opacity-80">
                         {project.description}
                     </p>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col gap-2">
                         {project.liveLink ? (
                             <CFButton
                                 variant="sm"
