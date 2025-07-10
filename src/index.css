@@ -58,7 +58,7 @@
 }
 
 @font-face {
-    font-family: "MajorMonoDisplay";
+    font-family: "ShareTechMono";
     src: local("Major Mono Display"), url("./assets/fonts/MajorMonoDisplay-Regular.ttf");
     font-weight: 400;
 }
@@ -140,7 +140,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "MajorMonoDisplay", "Courier New", "Courier", monospace;
+    font-family: "ShareTechMono", "Courier New", "Courier", monospace;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.3em;
