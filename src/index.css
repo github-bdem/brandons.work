@@ -534,7 +534,31 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #d4c5a9;
+    background: 
+        /* Base gradient for depth */
+        radial-gradient(
+            ellipse at center,
+            rgba(128, 0, 32, 0.4) 0%,
+            rgba(96, 0, 24, 0.6) 50%,
+            rgba(64, 0, 16, 0.8) 100%
+        ),
+        /* Subtle noise texture */
+            repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 5px,
+                rgba(255, 255, 255, 0.03) 5px,
+                rgba(255, 255, 255, 0.03) 10px
+            ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 5px,
+            rgba(0, 0, 0, 0.02) 5px,
+            rgba(0, 0, 0, 0.02) 10px
+        ),
+        /* Base color */ #5d0f1a;
+    backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -549,7 +573,7 @@ h6 {
     max-height: 900px;
     background: #d4c5a9;
     border-radius: 50px;
-    padding: 35px;
+    padding: 60px;
     box-shadow:
         inset 0 0 80px rgba(0, 0, 0, 0.3),
         inset 0 0 40px rgba(0, 0, 0, 0.2),
@@ -569,19 +593,6 @@ h6 {
     border: 2px solid #998866;
     border-radius: 40px;
     pointer-events: none;
-}
-
-.crt-bezel::after {
-    content: "ALIEN SYSTEMS";
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: "Courier New", monospace;
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: #776655;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
 }
 
 .crt-bezel-inner {
@@ -752,8 +763,8 @@ h6 {
 /* Speaker grille */
 .crt-speaker-grille {
     position: absolute;
-    bottom: 20px;
-    right: 40px;
+    bottom: 10px;
+    left: 90px;
     width: 120px;
     height: 40px;
     background: repeating-linear-gradient(
@@ -783,7 +794,7 @@ body::before {
 /* Control Panel */
 .crt-control-panel {
     position: absolute;
-    bottom: 40px;
+    bottom: 10px;
     left: 60px;
     display: flex;
     align-items: center;
@@ -838,8 +849,8 @@ body::before {
 /* Indicator Lights */
 .crt-indicators {
     position: absolute;
-    top: 40px;
-    right: 60px;
+    top: 30px;
+    right: 90px;
     display: flex;
     gap: 25px;
 }

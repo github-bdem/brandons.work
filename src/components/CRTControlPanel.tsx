@@ -5,10 +5,6 @@ function CRTControlPanel() {
             <div className="dial">
                 <div className="dial-marker"></div>
             </div>
-            <div className="control-label">CONTRAST</div>
-            <div className="dial">
-                <div className="dial-marker"></div>
-            </div>
         </div>
     );
 }
