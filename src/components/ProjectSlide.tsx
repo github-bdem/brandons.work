@@ -36,9 +36,11 @@ function ProjectSlide({ index, project }: ProjectSlideProps) {
 
                 {/* Project Content */}
                 <div className="flex flex-col flex-grow p-6">
-                    <h3 className="project-title mb-3">
-                        {project.name}
-                    </h3>
+                    <div className="mb-3">
+                        <h3 className="project-title">
+                            {project.name}
+                        </h3>
+                    </div>
                     
                     <p className="project-description mb-6 flex-grow">
                         {project.description}
