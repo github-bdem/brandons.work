@@ -1,30 +1,34 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function ContactForm() {
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleChange = (
+        e: React.ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >,
+    ) => {
         const { name, value } = e.target;
-        setFormData(prev => ({
+        setFormData((prev) => ({
             ...prev,
-            [name]: value
+            [name]: value,
         }));
     };
 
     // Generate mailto link with form data
     const generateMailtoLink = () => {
-        const to = 'bison_roost.9v@icloud.com';
-        
+        const to = "bison_roost.9v@icloud.com";
+
         // Create subject line
-        const subjectText = formData.subject 
-            ? `${formData.subject} - Contact from ${formData.name}` 
+        const subjectText = formData.subject
+            ? `${formData.subject} - Contact from ${formData.name}`
             : `Contact from ${formData.name}`;
-        
+
         // Create email body
         const bodyText = `
 Hi Brandon,
@@ -35,7 +39,7 @@ ${formData.message}
 Contact Details:
 Name: ${formData.name}
 Email: ${formData.email}
-Project Type: ${formData.subject || 'Not specified'}
+Project Type: ${formData.subject || "Not specified"}
 
 Sent from brandons.work contact form
         `.trim();
@@ -43,25 +47,32 @@ Sent from brandons.work contact form
         // Encode the subject and body for URL
         const encodedSubject = encodeURIComponent(subjectText);
         const encodedBody = encodeURIComponent(bodyText);
-        
+
         return `mailto:${to}?subject=${encodedSubject}&body=${encodedBody}`;
     };
 
     // Check if required fields are filled
-    const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim();
+    const isFormValid =
+        formData.name.trim() &&
+        formData.email.trim() &&
+        formData.message.trim();
 
     return (
-        <div className="card max-w-2xl mx-auto p-8">
+        <div className="card mx-auto max-w-2xl p-8">
             <div className="mb-8">
-                <h3 className="text-2xl font-bold text-primary mb-2">GET IN TOUCH</h3>
+                <div className="mb-2">
+                    <h3 className="text-primary text-2xl font-bold">
+                        GET IN TOUCH
+                    </h3>
+                </div>
                 <p className="project-description">
-                    Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.
+                    {`Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.`}
                 </p>
             </div>
 
             <div className="space-y-6">
                 {/* Name and Email Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="form-field">
                         <label htmlFor="name" className="form-label">
                             NAME *
@@ -77,7 +88,7 @@ Sent from brandons.work contact form
                             placeholder="Your full name"
                         />
                     </div>
-                    
+
                     <div className="form-field">
                         <label htmlFor="email" className="form-label">
                             EMAIL *
@@ -109,9 +120,13 @@ Sent from brandons.work contact form
                     >
                         <option value="">Select project type</option>
                         <option value="Web Development">Web Development</option>
-                        <option value="Frontend Consulting">Frontend Consulting</option>
+                        <option value="Frontend Consulting">
+                            Frontend Consulting
+                        </option>
                         <option value="Team Leadership">Team Leadership</option>
-                        <option value="Architecture Review">Architecture Review</option>
+                        <option value="Architecture Review">
+                            Architecture Review
+                        </option>
                         <option value="Other">Other</option>
                     </select>
                 </div>
@@ -137,17 +152,21 @@ Sent from brandons.work contact form
                 <div className="technical-divider"></div>
 
                 {/* Submit section */}
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
                     <div className="flex items-center gap-3">
-                        <div className={`technical-indicator ${isFormValid ? 'active' : ''}`}></div>
-                        <span className="font-mono text-xs text-neutral">
-                            {isFormValid ? 'READY.TO.SEND' : 'COMPLETE.REQUIRED.FIELDS'}
+                        <div
+                            className={`technical-indicator ${isFormValid ? "active" : ""}`}
+                        ></div>
+                        <span className="text-neutral font-mono text-xs">
+                            {isFormValid
+                                ? "READY.TO.SEND"
+                                : "COMPLETE.REQUIRED.FIELDS"}
                         </span>
                     </div>
-                    
+
                     <a
                         href={generateMailtoLink()}
-                        className={`btn btn-primary ${!isFormValid ? 'opacity-50 pointer-events-none' : ''}`}
+                        className={`btn btn-primary ${!isFormValid ? "pointer-events-none opacity-50" : ""}`}
                         aria-disabled={!isFormValid}
                     >
                         SEND MESSAGE
@@ -155,18 +174,39 @@ Sent from brandons.work contact form
                 </div>
 
                 {/* Info message */}
-                <div className="form-status" style={{ 
-                    borderColor: 'var(--color-technical-blue)',
-                    background: 'rgba(59, 130, 246, 0.05)',
-                    color: 'var(--color-technical-blue)'
-                }}>
+                <div
+                    className="form-status"
+                    style={{
+                        borderColor: "var(--color-technical-blue)",
+                        background: "rgba(59, 130, 246, 0.05)",
+                        color: "var(--color-technical-blue)",
+                    }}
+                >
                     <div className="flex items-center gap-2">
-                        <div className="technical-indicator" style={{ background: 'var(--color-technical-blue)' }}></div>
-                        <span className="font-semibold">Email client integration</span>
+                        <div
+                            className="technical-indicator"
+                            style={{
+                                background: "var(--color-technical-blue)",
+                            }}
+                        ></div>
+                        <span className="font-semibold">
+                            Email client integration
+                        </span>
                     </div>
-                    <p className="text-sm text-neutral mt-1">
-                        Clicking "Send Message" will open your default email client with the message pre-filled.
+                    <p className="text-neutral mt-1 pb-4 text-sm">
+                        {`Clicking "Send Message" will open your default email
+                        client with the message pre-filled. If you do not have an email client installed, please click the button below to copy the contact email to your clipboard.`}
                     </p>
+                    <button
+                        onClick={() => {
+                            navigator.clipboard
+                                .writeText("bison_roost.9v@icloud.com")
+                                .catch(() => null);
+                        }}
+                        className="btn btn-secondary"
+                    >
+                        Copy Email
+                    </button>
                 </div>
             </div>
         </div>
