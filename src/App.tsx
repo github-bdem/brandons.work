@@ -8,22 +8,26 @@ function App() {
     const currentProjects = projects;
 
     return (
-        <div className="min-h-screen bg-base-100">
+        <div className="bg-base-100 min-h-screen">
             {/* Hero Section */}
             <section className="technical-hero technical-grid">
                 <div className="technical-container">
                     <div className="mb-8 md:mb-16">
                         <TerminalPageIndicator pageTitle="SYSTEM.INIT" />
                     </div>
-                    
+
                     <div className="max-w-4xl md:ml-18">
-                        <h1 className="mb-8 font-black tracking-tight">
-                            <span className="block text-primary">{`BRANDON'S`}</span>
-                            <span className="block text-secondary ml-8">WORK</span>
-                        </h1>
-                        
-                        <div className="card max-w-3xl mb-12 p-8">
-                            <p className="text-lg leading-relaxed text-neutral">
+                        <div className="mb-8">
+                            <h1 className="font-black tracking-tight">
+                                <span className="text-primary block">{`BRANDON'S`}</span>
+                                <span className="text-secondary ml-8 block">
+                                    WORK
+                                </span>
+                            </h1>
+                        </div>
+
+                        <div className="card mb-12 max-w-3xl p-8">
+                            <p className="text-neutral text-lg leading-relaxed">
                                 {`With over a decade of experience crafting digital experiences, 
                                 I bring deep expertise in front-end engineering to every project. 
                                 From nimble startups to enterprise environments, I've led teams, 
@@ -54,7 +58,7 @@ function App() {
             {/* Projects Section */}
             <section className="technical-section bg-base-200">
                 <div className="technical-container">
-                    <div className="mb-8 flex justify-between items-center">
+                    <div className="mb-8 flex items-center justify-between">
                         <TerminalPageIndicator pageTitle="PROJECTS.DISPLAY" />
                         <div className="nav-dots">
                             <div className="nav-dot active"></div>
@@ -62,11 +66,12 @@ function App() {
                             <div className="nav-dot"></div>
                         </div>
                     </div>
-                    
-                    <h2 className="mb-12 text-center">
-                        <span className="text-primary">PRO</span>
-                        <span className="text-secondary">JECTS</span>
-                    </h2>
+                    <div className="mb-12">
+                        <h2 className="text-center">
+                            <span className="text-primary">PRO</span>
+                            <span className="text-secondary">JECTS</span>
+                        </h2>
+                    </div>
 
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {currentProjects.map((project, index) => (
@@ -83,7 +88,7 @@ function App() {
             {/* Contact Section */}
             <section className="technical-section bg-base-100">
                 <div className="technical-container">
-                    <div className="mb-8 flex justify-between items-center">
+                    <div className="mb-8 flex items-center justify-between">
                         <TerminalPageIndicator pageTitle="CONTACT.INTERFACE" />
                         <div className="nav-dots">
                             <div className="nav-dot"></div>
@@ -91,24 +96,28 @@ function App() {
                             <div className="nav-dot"></div>
                         </div>
                     </div>
-                    
-                    <h2 className="mb-12 text-center">
-                        <span className="text-primary">CON</span>
-                        <span className="text-secondary">TACT</span>
-                    </h2>
+
+                    <div className="mb-12">
+                        <h2 className="text-center">
+                            <span className="text-primary">CON</span>
+                            <span className="text-secondary">TACT</span>
+                        </h2>
+                    </div>
 
                     <ContactForm />
                 </div>
             </section>
 
             {/* Footer */}
-            <footer className="technical-section border-t border-base-300">
+            <footer className="technical-section border-base-300 border-t">
                 <div className="technical-container">
-                    <div className="flex justify-between items-center text-sm text-neutral">
+                    <div className="text-neutral flex items-center justify-between text-sm">
                         <div className="font-mono">{`© 2025 BRANDON'S WORK`}</div>
                         <div className="flex items-center gap-2">
                             <div className="technical-indicator active"></div>
-                            <span className="font-mono text-xs">SYSTEM.ONLINE</span>
+                            <span className="font-mono text-xs">
+                                SYSTEM.ONLINE
+                            </span>
                         </div>
                     </div>
                 </div>
