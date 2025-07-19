@@ -1,15 +1,14 @@
-type CFButtonSizes = "regular" | "sm";
 type CFButtonTypes = "primary" | "secondary";
 
 interface CFButtonProps {
     url: string;
     label: string;
-    variant?: CFButtonSizes;
+    variant?: CFButtonTypes;
     buttonType?: CFButtonTypes;
 }
 
-function CFButton({ url, label, variant = "regular", buttonType = "primary" }: CFButtonProps) {
-    const sizeClasses = variant === "sm" ? "text-xs py-2 px-4" : "text-sm py-3 px-6";
+function CFButton({ url, label, variant = "primary", buttonType = "primary" }: CFButtonProps) {
+    const sizeClasses = variant === "secondary" ? "text-xs py-2 px-4" : "text-sm py-3 px-6";
     const typeClasses = buttonType === "secondary" ? "btn-secondary" : "btn-primary";
     
     return (

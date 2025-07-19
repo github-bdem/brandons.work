@@ -51,14 +51,14 @@ function ProjectSlide({ index, project }: ProjectSlideProps) {
                     <div className="flex flex-col gap-3">
                         {project.liveLink && (
                             <CFButton
-                                variant="sm"
+                                variant="secondary"
                                 url={project.liveLink.href}
                                 label={project.liveLink.displayText}
                                 buttonType="primary"
                             />
                         )}
                         <CFButton
-                            variant="sm"
+                            variant="secondary"
                             url={project.repoLink.href}
                             label={project.repoLink.displayText}
                             buttonType="secondary"
