@@ -8,51 +8,60 @@ interface ProjectSlideProps {
 
 function ProjectSlide({ index, project }: ProjectSlideProps) {
     return (
-        <div
-            id={`slide${index}`}
-            className="tech-card w-full transition-all duration-200"
-        >
+        <div className="project-card group">
             <div className="project-id">
-                ID: {String(index + 1).padStart(3, "0")}
+                {String(index + 1).padStart(3, "0")}
             </div>
-            <div className="flex h-full flex-col">
-                <div className="relative h-32 overflow-hidden">
+            
+            <div className="flex flex-col h-full">
+                {/* Project Image/Placeholder */}
+                <div className="relative h-48 overflow-hidden bg-base-200 border-b border-base-300">
                     {project.previewImageUrl ? (
                         <img
                             src={project.previewImageUrl}
                             alt={project.name}
-                            className="h-full w-full object-cover"
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                     ) : (
-                        <div className="relative flex h-full w-full items-center justify-center bg-black">
-                            <div className="ascii-placeholder">
-                                <span className="text-amber font-mono text-4xl opacity-20">
-                                    [{project.name.charAt(0)}]
-                                </span>
+                        <div className="flex items-center justify-center h-full bg-gradient-to-br from-base-200 to-base-300">
+                            <div className="text-6xl font-mono font-bold text-neutral opacity-20">
+                                {project.name.charAt(0)}
                             </div>
-                            <div className="scan-overlay"></div>
                         </div>
                     )}
+                    
+                    {/* Technical overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex flex-grow flex-col p-3">
-                    <h2 className="text-amber terminal-text mb-2 text-lg font-bold tracking-wider uppercase">
-                        &gt; {project.name}
-                    </h2>
-                    <p className="mb-3 line-clamp-3 flex-grow text-xs opacity-80">
+
+                {/* Project Content */}
+                <div className="flex flex-col flex-grow p-6">
+                    <h3 className="project-title mb-3">
+                        {project.name}
+                    </h3>
+                    
+                    <p className="project-description mb-6 flex-grow">
                         {project.description}
                     </p>
-                    <div className="flex flex-col gap-2">
-                        {project.liveLink ? (
+                    
+                    {/* Technical divider */}
+                    <div className="technical-divider mb-4"></div>
+                    
+                    {/* Action buttons */}
+                    <div className="flex flex-col gap-3">
+                        {project.liveLink && (
                             <CFButton
                                 variant="sm"
                                 url={project.liveLink.href}
                                 label={project.liveLink.displayText}
+                                buttonType="primary"
                             />
-                        ) : null}
+                        )}
                         <CFButton
                             variant="sm"
                             url={project.repoLink.href}
                             label={project.repoLink.displayText}
+                            buttonType="secondary"
                         />
                     </div>
                 </div>
