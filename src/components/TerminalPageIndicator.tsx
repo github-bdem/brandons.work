@@ -4,9 +4,9 @@ interface TerminalPageIndicatorProps {
 
 function TerminalPageIndicator({ pageTitle }: TerminalPageIndicatorProps) {
     return (
-        <div className="terminal-header mb-8">
-            <span className="terminal-indicator"></span>
-            <span className="terminal-text">{pageTitle}</span>
+        <div className="technical-header">
+            <span className="technical-indicator pulse"></span>
+            <span>{pageTitle}</span>
         </div>
     );
 }

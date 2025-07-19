@@ -1,30 +1,26 @@
-type CFButtonSizes = "regular" | "sm";
+type CFButtonTypes = "primary" | "secondary";
 
 interface CFButtonProps {
     url: string;
     label: string;
-    variant?: CFButtonSizes;
+    variant?: CFButtonTypes;
+    buttonType?: CFButtonTypes;
 }
 
-function CFButton({ url, label, variant }: CFButtonProps) {
-    const buttonStyling =
-        variant === "sm"
-            ? "btn btn-sm tech-button-small"
-            : "btn btn-primary tech-button";
+function CFButton({ url, label, variant = "primary", buttonType = "primary" }: CFButtonProps) {
+    const sizeClasses = variant === "secondary" ? "text-xs py-2 px-4" : "text-sm py-3 px-6";
+    const typeClasses = buttonType === "secondary" ? "btn-secondary" : "btn-primary";
+    
     return (
         <a
-            className={buttonStyling}
+            className={`btn ${typeClasses} ${sizeClasses} inline-flex items-center justify-center`}
             href={url}
             target="_blank"
             rel="noopener noreferrer"
         >
-            <span className="button-corner top-left"></span>
-            <span className="button-corner top-right"></span>
-            <span className="button-corner bottom-left"></span>
-            <span className="button-corner bottom-right"></span>
-            <span
-                className={`tracking-wider uppercase ${variant === "sm" ? "text-xs" : ""}`}
-            >{`[ ${label} ]`}</span>
+            <span className="font-semibold tracking-wider">
+                {label}
+            </span>
         </a>
     );
 }

@@ -1,3 +1,16 @@
-// This file is needed to enable tailwind css completion within vscode
-// our vite config setup doesn't use this I believe
-export default {};
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('daisyui'),
+  ],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
+}
