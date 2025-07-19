@@ -60,9 +60,11 @@ Sent from brandons.work contact form
     return (
         <div className="card mx-auto max-w-2xl p-8">
             <div className="mb-8">
-                <h3 className="text-primary mb-2 text-2xl font-bold">
-                    GET IN TOUCH
-                </h3>
+                <div className="mb-2">
+                    <h3 className="text-primary text-2xl font-bold">
+                        GET IN TOUCH
+                    </h3>
+                </div>
                 <p className="project-description">
                     {`Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.`}
                 </p>
@@ -191,10 +193,20 @@ Sent from brandons.work contact form
                             Email client integration
                         </span>
                     </div>
-                    <p className="text-neutral mt-1 text-sm">
+                    <p className="text-neutral mt-1 pb-4 text-sm">
                         {`Clicking "Send Message" will open your default email
-                        client with the message pre-filled.`}
+                        client with the message pre-filled. If you do not have an email client installed, please click the button below to copy the contact email to your clipboard.`}
                     </p>
+                    <button
+                        onClick={() => {
+                            navigator.clipboard
+                                .writeText("bison_roost.9v@icloud.com")
+                                .catch(() => null);
+                        }}
+                        className="btn btn-secondary"
+                    >
+                        Copy Email
+                    </button>
                 </div>
             </div>
         </div>

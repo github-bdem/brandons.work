@@ -1,5 +1,5 @@
 /* Import modern technical fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 @plugin "daisyui" {
     themes:
@@ -43,9 +43,13 @@
 }
 
 :root {
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-    
+    --font-primary:
+        "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+        sans-serif;
+    --font-mono:
+        "JetBrains Mono", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono",
+        Consolas, "Courier New", monospace;
+
     --color-technical-black: #000000;
     --color-technical-blue: #3b82f6;
     --color-technical-red: #ef4444;
@@ -72,7 +76,12 @@ body {
 }
 
 /* Technical typography system */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-primary);
     font-weight: 800;
     letter-spacing: -0.025em;
@@ -157,13 +166,13 @@ h2 {
 }
 
 .technical-grid::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
     background-size: 20px 20px;
@@ -204,8 +213,13 @@ h2 {
 }
 
 @keyframes technical-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
 }
 
 /* Project card styling */
@@ -292,11 +306,21 @@ h2 {
 }
 
 /* Technical spacing utilities */
-.spacing-xs { padding: 0.5rem; }
-.spacing-sm { padding: 1rem; }
-.spacing-md { padding: 2rem; }
-.spacing-lg { padding: 3rem; }
-.spacing-xl { padding: 4rem; }
+.spacing-xs {
+    padding: 0.5rem;
+}
+.spacing-sm {
+    padding: 1rem;
+}
+.spacing-md {
+    padding: 2rem;
+}
+.spacing-lg {
+    padding: 3rem;
+}
+.spacing-xl {
+    padding: 4rem;
+}
 
 /* Link styling */
 a {
@@ -310,7 +334,8 @@ a:hover {
 }
 
 /* Code and monospace elements */
-code, pre {
+code,
+pre {
     font-family: var(--font-mono);
     font-size: 0.875rem;
     background: var(--color-base-200);
@@ -439,15 +464,15 @@ img {
     .technical-hero {
         padding: 3rem 0;
     }
-    
+
     .technical-section {
         padding: 2rem 0;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
