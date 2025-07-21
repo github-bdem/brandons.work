@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="bg-base-100 min-h-screen">
             {/* Hero Section */}
-            <section className="technical-hero technical-grid">
+            <section className="technical-hero technical-grid min-h-[700px]">
                 <div className="technical-container">
                     <div className="mb-8 md:mb-16">
                         <TerminalPageIndicator pageTitle="SYSTEM.INIT" />
