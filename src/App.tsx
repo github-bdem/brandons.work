@@ -20,7 +20,7 @@ function App() {
                         <div className="mb-8">
                             <h1 className="font-black tracking-tight">
                                 <span className="text-primary block">{`BRANDON'S`}</span>
-                                <span className="text-secondary ml-8 block">
+                                <span className="text-secondary block">
                                     WORK
                                 </span>
                             </h1>
@@ -58,13 +58,8 @@ function App() {
             {/* Projects Section */}
             <section className="technical-section bg-base-200">
                 <div className="technical-container">
-                    <div className="mb-8 flex items-center justify-between">
+                    <div className="mb-8 flex">
                         <TerminalPageIndicator pageTitle="PROJECTS.DISPLAY" />
-                        <div className="nav-dots">
-                            <div className="nav-dot active"></div>
-                            <div className="nav-dot"></div>
-                            <div className="nav-dot"></div>
-                        </div>
                     </div>
                     <div className="mb-12">
                         <h2 className="text-center">
@@ -90,11 +85,6 @@ function App() {
                 <div className="technical-container">
                     <div className="mb-8 flex items-center justify-between">
                         <TerminalPageIndicator pageTitle="CONTACT.INTERFACE" />
-                        <div className="nav-dots">
-                            <div className="nav-dot"></div>
-                            <div className="nav-dot active"></div>
-                            <div className="nav-dot"></div>
-                        </div>
                     </div>
 
                     <div className="mb-12">
